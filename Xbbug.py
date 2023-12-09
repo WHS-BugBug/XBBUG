@@ -45,13 +45,13 @@ domains_file = args.list
 worker = args.worker
 
 if domains_file:
-    domain_lists = []
+    domain_list = []
     print("[+] domains:")
     for url in domains_file:
         print(url.strip())
-        domain_lists += [url.strip()]
+        domain_list += [url.strip()]
     print()
-    param_list = katana(domain_lists, dont_search_subdomains, depth)
+    param_list = katana(domain_list, dont_search_subdomains, depth)
     dalfox(param_list, delay, header, worker)
 else:
     if not dont_search_subdomains:

@@ -1,5 +1,5 @@
 import subprocess
-from config.check_protocol import check_protocol
+from config.check_protocol import check_protocol, check_protocol_list
 
 def clean_up(subdomains):
     subdomain_list = []
@@ -12,7 +12,7 @@ def katana(subdomains, dont_search_subdomains, depth):
     print("[+] katana start")
     
     if not dont_search_subdomains:
-        subdomains = check_protocol(subdomains)
+        subdomains = check_protocol_list(subdomains)
         subdomain_list = clean_up(subdomains)
     else:
         subdomains = check_protocol(subdomains)
