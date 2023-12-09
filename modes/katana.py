@@ -12,6 +12,7 @@ def katana(subdomains, dont_search_subdomains, depth):
     print("[+] katana start")
     
     if not dont_search_subdomains:
+        subdomains = check_protocol(subdomains)
         subdomain_list = clean_up(subdomains)
     else:
         subdomains = check_protocol(subdomains)
