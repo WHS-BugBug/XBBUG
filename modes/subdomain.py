@@ -13,7 +13,6 @@ def httpx_command():
     clear_subdomains = subprocess.run(basic_httpx_command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     print("[+] httpx result:")
     print(clear_subdomains.stdout)
-    print(clear_subdomains.stdout.split())
 
     return clear_subdomains.stdout.split()
 
