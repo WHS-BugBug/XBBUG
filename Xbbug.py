@@ -14,6 +14,7 @@ parser = argparse.ArgumentParser(description='XSS automated detection framework'
 parser.add_argument('-u', '--url', required=True, help='input url ex) naver.com, enki.co.kr', dest='url')
 parser.add_argument('-ds', '-do-not-search-subdomains', action='store_true', help="Don't search for subdomains")
 parser.add_argument('-d', '-depth', help="maximum depth to crawl of katana (default 3)", default=3, dest='depth')
+parser.add_argument('-d', '-depth', help="maximum depth to crawl of katana (default 3)", default=3, dest='depth')
 
 
 
