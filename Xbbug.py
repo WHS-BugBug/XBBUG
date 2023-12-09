@@ -20,9 +20,10 @@ parser.add_argument('-u', '--url', help='Input url ex) naver.com, enki.co.kr', d
 parser.add_argument('-l', '--list', type=argparse.FileType('r'), help="Input The file of the domains")
 #parser.add_argument('-l', '--list', help="Input The file of the domains")
 parser.add_argument('-ds', '--do-not-search-subdomains', action='store_true', help="Don't search for subdomains")
-parser.add_argument('-d', '--depth', help="Maximum depth to crawl of katana (default 3)", default=3, dest='depth')
+parser.add_argument('-d', '--depth', help="Maximum depth to crawl of katana (default=3)", default=3, dest='depth')
 parser.add_argument('-rd', '--delay', help="Milliseconds between send to same host of dalfox (1000==1s)", dest='delay', default=0)
 parser.add_argument('-H', '--header', help="Add custom headers of dalfox", dest='header', default=f'"User-Agent: {user_agent}"')
+parser.add_argument('-w', '--worker', help="Number of worker in Dalfox (default=100)", dest='worker', default=100)
 
 args = parser.parse_args()
 
@@ -41,6 +42,7 @@ depth = args.depth
 delay = args.delay
 header = args.header
 domains_file = args.list
+worker = args.worker
 
 if domains_file:
     domain_lists = []
@@ -50,12 +52,12 @@ if domains_file:
         domain_lists += [url.strip()]
     print()
     param_list = katana(domain_lists, dont_search_subdomains, depth)
-    dalfox(param_list, delay, header)
+    dalfox(param_list, delay, header, worker)
 else:
     if not dont_search_subdomains:
         subdomain_list = subdomain(url)
         param_list = katana(subdomain_list, dont_search_subdomains, depth)
-        dalfox(param_list, delay, header)
+        dalfox(param_list, delay, header, worker)
     else:
         param_list = katana(url, dont_search_subdomains, depth)
-        dalfox(param_list, delay, header)
+        dalfox(param_list, delay, header, worker)
