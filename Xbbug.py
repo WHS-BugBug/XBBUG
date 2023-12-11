@@ -1,6 +1,7 @@
 import argparse
 import random
 from modes.subdomain import subdomain
+from modes.subdomain import httpx_command
 from modes.katana import katana
 from modes.dalfox import dalfox
 from config.logo import logo
@@ -51,13 +52,14 @@ if domains_file:
         print(url.strip())
         domain_list += [url.strip()]
     print()
-    param_list = katana(domain_list, dont_search_subdomains, depth, domains_file)
+    domain_list = httpx_command(domains_file)
+    param_list = katana(domain_list, dont_search_subdomains, depth)
     dalfox(param_list, delay, header, worker)
 else:
     if not dont_search_subdomains:
-        subdomain_list = subdomain(url)
-        param_list = katana(subdomain_list, dont_search_subdomains, depth, domains_file)
+        subdomain_list = subdomain(url, domains_file)
+        param_list = katana(subdomain_list, dont_search_subdomains, depth)
         dalfox(param_list, delay, header, worker)
     else:
-        param_list = katana(url, dont_search_subdomains, depth, domains_file)
+        param_list = katana(url, dont_search_subdomains, depth)
         dalfox(param_list, delay, header, worker)
