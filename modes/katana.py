@@ -1,21 +1,11 @@
 import subprocess
-from config.check_protocol import check_protocol, check_protocol_list
+from config.check_protocol import check_protocol
 
-def clean_up(subdomains):
-    subdomain_list = []
-    for url in subdomains:
-        if url.startswith('http'):
-            subdomain_list += [url]
-    return subdomain_list
-
-def katana(subdomains, dont_search_subdomains, depth, domains_file):
+def katana(subdomains, dont_search_subdomains, depth):
     print("[+] katana start")
     
     if not dont_search_subdomains:
-        if domains_file:
-            subdomain_list = check_protocol_list(subdomains)
-        else:
-            subdomain_list = clean_up(subdomains)
+            subdomain_list = subdomains
     else:
         subdomains = check_protocol(subdomains)
         subdomain_list = [subdomains]

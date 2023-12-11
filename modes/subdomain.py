@@ -1,5 +1,12 @@
 import subprocess
 
+def clean_up(subdomains):
+    subdomain_list = []
+    for url in subdomains:
+        if url.startswith('http'):
+            subdomain_list += [url]
+    return subdomain_list
+
 def subfinder_command(url):
     print("[+] subfinder start")
     basic_subfinder_command = f"/bin/subfinder -d {url} -silent | tee subdomains.txt"
@@ -7,17 +14,21 @@ def subfinder_command(url):
     print("[+] subfinder result:")
     print(subdomains.stdout)
 
-def httpx_command():
+def httpx_command(domains_file):
     print("[+] httpx start")
-    basic_httpx_command = f"/bin/httpx -l subdomains.txt -silent -follow-redirects -mc 200"
+    if domains_file:
+        basic_httpx_command = f"/bin/httpx -l {domains_file} -silent -follow-redirects -mc 200"
+    else:
+        basic_httpx_command = f"/bin/httpx -l subdomains.txt -silent -follow-redirects -mc 200"
     clear_subdomains = subprocess.run(basic_httpx_command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     print("[+] httpx result:")
-    print(clear_subdomains.stdout)
+    clean_subdomains = clean_up(clear_subdomains.stdout.split())
+    print(clean_subdomains)
 
-    return clear_subdomains.stdout.split()
+    return clean_subdomains
 
-def subdomain(url):
+def subdomain(url, domains_file):
     subfinder_command(url)
-    subdomain_list = httpx_command()
+    subdomain_list = httpx_command(domains_file)
     
     return subdomain_list
