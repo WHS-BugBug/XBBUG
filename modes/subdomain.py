@@ -26,7 +26,8 @@ def httpx_command(domains_file):
     
     for url in clean_subdomains:
         print(url)
-
+    print()
+    
     return clean_subdomains
 
 def subdomain(url, domains_file):

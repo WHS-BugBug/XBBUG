@@ -45,6 +45,11 @@ domains_file = args.list
 worker = args.worker
 
 if domains_file:
+    print("[+] domains:")
+    for url in domains_file:
+        print(url.strip())
+    print()
+
     domain_list = httpx_command(domains_file.name)
     param_list = katana(domain_list, dont_search_subdomains, depth)
     dalfox(param_list, delay, header, worker)
