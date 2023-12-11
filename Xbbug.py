@@ -51,13 +51,13 @@ if domains_file:
         print(url.strip())
         domain_list += [url.strip()]
     print()
-    param_list = katana(domain_list, dont_search_subdomains, depth)
+    param_list = katana(domain_list, dont_search_subdomains, depth, domains_file)
     dalfox(param_list, delay, header, worker)
 else:
     if not dont_search_subdomains:
         subdomain_list = subdomain(url)
-        param_list = katana(subdomain_list, dont_search_subdomains, depth)
+        param_list = katana(subdomain_list, dont_search_subdomains, depth, domains_file)
         dalfox(param_list, delay, header, worker)
     else:
-        param_list = katana(url, dont_search_subdomains, depth)
+        param_list = katana(url, dont_search_subdomains, depth, domains_file)
         dalfox(param_list, delay, header, worker)

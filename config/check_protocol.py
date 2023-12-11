@@ -20,4 +20,7 @@ def check_protocol_list(target_list):
                 subdomain_list += ['https://' + url]
             except:
                 subdomain_list += ['http://' + url]
+        else:
+            subdomain_list += [url]
+
     return subdomain_list

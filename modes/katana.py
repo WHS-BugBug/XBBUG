@@ -8,12 +8,14 @@ def clean_up(subdomains):
             subdomain_list += [url]
     return subdomain_list
 
-def katana(subdomains, dont_search_subdomains, depth):
+def katana(subdomains, dont_search_subdomains, depth, domains_file):
     print("[+] katana start")
     
     if not dont_search_subdomains:
-        subdomains = check_protocol_list(subdomains)
-        subdomain_list = clean_up(subdomains)
+        if domains_file:
+            subdomains = check_protocol_list(subdomains)
+        else:
+            subdomain_list = clean_up(subdomains)
     else:
         subdomains = check_protocol(subdomains)
         subdomain_list = [subdomains]
