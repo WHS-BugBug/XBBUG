@@ -20,11 +20,5 @@ def katana(subdomains, dont_search_subdomains, depth):
         print(param_urls.stdout)
 
         param_list += param_urls.stdout.split()
-    
-    if not dont_search_subdomains:
-        print("[+] total katana result: ")
-        for u in param_list:
-            print(u)
-        print()
 
     return param_list
