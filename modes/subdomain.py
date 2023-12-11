@@ -23,7 +23,9 @@ def httpx_command(domains_file):
     clear_subdomains = subprocess.run(basic_httpx_command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     print("[+] httpx result:")
     clean_subdomains = clean_up(clear_subdomains.stdout.split())
-    print(clean_subdomains)
+    
+    for url in clean_subdomains:
+        print(url)
 
     return clean_subdomains
 

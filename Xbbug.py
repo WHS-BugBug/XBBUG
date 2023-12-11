@@ -19,7 +19,6 @@ user_agent = random.choice(user_agents)
 parser = argparse.ArgumentParser(description='XSS automated detection framework')
 parser.add_argument('-u', '--url', help='Input url ex) naver.com, enki.co.kr', dest='url')
 parser.add_argument('-l', '--list', type=argparse.FileType('r'), help="Input The file of the domains")
-#parser.add_argument('-l', '--list', help="Input The file of the domains")
 parser.add_argument('-ds', '--do-not-search-subdomains', action='store_true', help="Don't search for subdomains")
 parser.add_argument('-d', '--depth', help="Maximum depth to crawl of katana (default=3)", default=3, dest='depth')
 parser.add_argument('-rd', '--delay', help="Milliseconds between send to same host of dalfox (1000==1s)", dest='delay', default=0)
@@ -46,13 +45,7 @@ domains_file = args.list
 worker = args.worker
 
 if domains_file:
-    domain_list = []
-    print("[+] domains:")
-    for url in domains_file:
-        print(url.strip())
-        domain_list += [url.strip()]
-    print()
-    domain_list = httpx_command(domains_file)
+    domain_list = httpx_command(domains_file.name)
     param_list = katana(domain_list, dont_search_subdomains, depth)
     dalfox(param_list, delay, header, worker)
 else:
