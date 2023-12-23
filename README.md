@@ -1,4 +1,6 @@
-<center><h1>XBBUG</h1></center>
+<p align="center">
+    <h1>XBBUG</h1>
+</p>
 The XBBUG is an open source framework that automatically scans for Cross Site Scripting(XSS) vulnerabilities.
 
 The XBBUG framework uses Subfinder, httpx, Katana, and Dalfox tools.
