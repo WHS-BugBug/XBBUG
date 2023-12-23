@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">XBBUG</h1>
+<center><h1>XBBUG</h1></center>
 The XBBUG is an open source framework that automatically scans for Cross Site Scripting(XSS) vulnerabilities.
 
 The XBBUG framework uses Subfinder, httpx, Katana, and Dalfox tools.
@@ -9,42 +9,34 @@ The XBBUG Framework supports:
 -   Find endpoints and parameters using Katana tools.
 -   Detect XSS vulnerabilities using the Dalfox tool.
 
-<h2 style="text-align: center;">Flowchart</h2>
-<div style="text-align: center;">
-    <img src="./assets/XBBUG Flowchart.png" alt="XBBUG Flowchart">
-</div>
+<center><h2>Flowchart</h2></center>
+<center><img src="./assets/XBBUG Flowchart.png" alt="XBBUG Flowchart"></center>
 <br/>
 
-<h2 style="text-align: center;">Getting started</h2>
+<center><h2>Getting started</h2></center>
 
 ```sh
 sh setup.sh
 ```
 
-<h2 style="text-align: center;">XBBUG Framework Guide</h2>
+<center><h2>XBBUG Framework Guide</h2></center>
 
 -   [guide-ko-documentation](./GUIDE_ko.md)
 -   [guide-en-documentation](./GUIDE_en.md)
 
 #### (1) Find subdomains.
 
-<div style="text-align: center;">
-    <img src="./assets/subfinder_httpx.gif" alt="XBBUG Flowchart">
-</div>
+<center><img src="./assets/subfinder_httpx.gif" alt="XBBUG Flowchart"></center>
 
 #### (2) Find endpoints and parameters.
 
-<div style="text-align: center;">
-    <img src="./assets/Katana.gif" alt="XBBUG Flowchart">
-</div>
+<center><img src="./assets/Katana.gif" alt="XBBUG Flowchart"></center>
 
 #### (3) Detect XSS vulnerabilities.
 
-<div style="text-align: center;">
-    <img src="./assets/Dalfox.gif" alt="XBBUG Flowchart">
-</div>
+<center><img src="./assets/Dalfox.gif" alt="XBBUG Flowchart"></center>
 
-<h2 style="text-align: center;">Reference</h2>
+<center><h2>Reference</h2></center>
 
 -   subfinder(https://github.com/projectdiscovery/subfinder)
 
@@ -54,11 +46,11 @@ sh setup.sh
 
 -   Dalfox(https://github.com/hahwul/dalfox)
 
-<h2 style="text-align: center;">Contact</h2>
+<center><h2>Contact</h2></center>
 
 -   whitehacker.roronoa@gmail.com
 
-<h2 style="text-align: center;">Contributor</h2>
+<center><h2>Contributor</h2></center>
 
 -   Jeongwoo Lee ([@Roronoawjd](https://github.com/Roronoawjd))
 -   Seongmin Yoon ([@Potato12351](https://github.com/Potato12351))
@@ -69,7 +61,7 @@ sh setup.sh
 -   PL: Sanghyun Lee ([@isanghyeon](https://github.com/isanghyeon))
 -   Mentor: Joowon Kim ([@arrester](https://github.com/arrester))
 
-<h2 style="text-align: center;">Acknowledgement</h2>
+<center><h2>Acknowledgement</h2></center>
 
 This work was supported by Korea Information Technology Research Institute (KITRI) WhiteHat School Program 1st.
 
