@@ -1,6 +1,5 @@
-<p align="center">
-    <h1>XBBUG</h1>
-</p>
+<h1>XBBUG</h1>
+
 The XBBUG is an open source framework that automatically scans for Cross Site Scripting(XSS) vulnerabilities.
 
 The XBBUG framework uses Subfinder, httpx, Katana, and Dalfox tools.
@@ -11,34 +10,34 @@ The XBBUG Framework supports:
 -   Find endpoints and parameters using Katana tools.
 -   Detect XSS vulnerabilities using the Dalfox tool.
 
-<center><h2>Flowchart</h2></center>
-<center><img src="./assets/XBBUG Flowchart.png" alt="XBBUG Flowchart"></center>
+<h2>Flowchart</h2>
+<img src="./assets/XBBUG Flowchart.png" alt="XBBUG Flowchart">
 <br/>
 
-<center><h2>Getting started</h2></center>
+<h2>Getting started</h2>
 
 ```sh
 sh setup.sh
 ```
 
-<center><h2>XBBUG Framework Guide</h2></center>
+<h2>XBBUG Framework Guide</h2>
 
 -   [guide-ko-documentation](./GUIDE_ko.md)
 -   [guide-en-documentation](./GUIDE_en.md)
 
 #### (1) Find subdomains.
 
-<center><img src="./assets/subfinder_httpx.gif" alt="XBBUG Flowchart"></center>
+<img src="./assets/subfinder_httpx.gif" alt="XBBUG Flowchart">
 
 #### (2) Find endpoints and parameters.
 
-<center><img src="./assets/Katana.gif" alt="XBBUG Flowchart"></center>
+<img src="./assets/Katana.gif" alt="XBBUG Flowchart">
 
 #### (3) Detect XSS vulnerabilities.
 
-<center><img src="./assets/Dalfox.gif" alt="XBBUG Flowchart"></center>
+<img src="./assets/Dalfox.gif" alt="XBBUG Flowchart">
 
-<center><h2>Reference</h2></center>
+<h2>Reference</h2>
 
 -   subfinder(https://github.com/projectdiscovery/subfinder)
 
@@ -48,11 +47,11 @@ sh setup.sh
 
 -   Dalfox(https://github.com/hahwul/dalfox)
 
-<center><h2>Contact</h2></center>
+<h2>Contact</h2>
 
 -   whitehacker.roronoa@gmail.com
 
-<center><h2>Contributor</h2></center>
+<h2>Contributor</h2>
 
 -   Jeongwoo Lee ([@Roronoawjd](https://github.com/Roronoawjd))
 -   Seongmin Yoon ([@Potato12351](https://github.com/Potato12351))
@@ -63,7 +62,7 @@ sh setup.sh
 -   PL: Sanghyun Lee ([@isanghyeon](https://github.com/isanghyeon))
 -   Mentor: Joowon Kim ([@arrester](https://github.com/arrester))
 
-<center><h2>Acknowledgement</h2></center>
+<h2>Acknowledgement</h2>
 
 This work was supported by Korea Information Technology Research Institute (KITRI) WhiteHat School Program 1st.
 
