@@ -1,4 +1,4 @@
-<h1>XBBUG</h1>
+<h1 align="center">XBBUG</h1>
 
 The XBBUG is an open source framework that automatically scans for Cross Site Scripting(XSS) vulnerabilities.
 
